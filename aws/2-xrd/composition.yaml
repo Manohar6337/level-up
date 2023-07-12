@@ -25,26 +25,6 @@ spec:
           toFieldPath: spec.forProvider.tags.Name
         #- fromFieldPath: spec.owner
         #  toFieldPath: spec.forProvider.tags.Owner
-    - base:
-        apiVersion: s3.aws.upbound.io/v1beta1
-        kind: BucketOwnershipControls
-        spec:
-          forProvider:
-            region: us-west-2
-      name: s3bucket-ownership
-      patches:
-        - fromFieldPath: spec.region
-          toFieldPath: spec.region
-        - fromFieldPath: spec.id
-          toFieldPath: metadata.name
-          transforms:
-            - type: string
-              string:
-                fmt: "%s-ownership"
-        - fromFieldPath: spec.id
-          toFieldPath: spec.forProvider.bucket
-        - fromFieldPath: spec.ownership
-          toFieldPath: spec.forProvider.rule[0].objectOwnership
     # IAM
     - name: s3-iam-role
       base:

@@ -28,13 +28,9 @@ spec:
                 region:
                   type: string
                   description: Region
-                ownership:
-                  type: string
-                  description: "Ownership of bucket BucketOwnerPreferred ObjectWriter or BucketOwnerEnforced"
                 #owner:
                 #  type: string
                 #  description: "owner"
               required:
                 - id
                 - region
-                - ownership

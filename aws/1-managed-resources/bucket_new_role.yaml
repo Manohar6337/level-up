@@ -4,7 +4,7 @@ metadata:
   name: levelup-s3-iam-role-torg
   labels:
     role: levelup-s3-iam-role-torg
-    crossplane-demo: levelup-managed-resources
+    crossplane-demo: aws-levelup-managed-resources
 spec:
   forProvider:
     assumeRolePolicy: |
