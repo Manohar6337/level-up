@@ -3,8 +3,10 @@
 This folder has a definition and composition YAML file. The definition will be the new API created in Kubernetes
 and the composition will build the following resources with the new API.
 
-* One S3 bucket
-* A new role, policy and role policy attachment
+* S3 bucket
+* IAM Role
+* IAM Policy
+* IAM RolePolicyAttachment
 
 This approach shows how the power of Crossplane XRDs combined with compositions will enable building a group of resources
 with a single API call.
@@ -21,7 +23,7 @@ Review the definition and composition files before applying.
 5. Verify the composite resource:
    * `kubectl get composite`
 6. Verify managed resources: 
-   * `kubectl get managed -l crossplane.io/claim-name=aws-levelup-xrd-CHANGE-ME`
+   * `kubectl get managed -l crossplane.io/claim-name=aws-levelup-xrd-CHANGE-ME` Be sure to modify CHANGE-ME
 
 ## Modify the definition, composition and claim
 In these steps we will add a parameter to the definition to add a tag to the s3 bucket.

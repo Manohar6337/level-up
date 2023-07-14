@@ -1,0 +1,11 @@
+apiVersion: storage.gcp.upbound.io/v1beta1
+kind: BucketAccessControl
+metadata:
+  name: levelup-bucketacl-CHANGE-ME
+  labels:
+    crossplane-demo: gcp-levelup-managed-resources
+spec:
+  forProvider:
+    bucket: levelup-bucket-CHANGE-ME
+    entity: allUsers
+    role: READER

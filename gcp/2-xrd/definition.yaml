@@ -1,15 +1,15 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xazurestorages.levelup.upbound.io
+  name: xgcpbuckets.levelup.upbound.io
 spec:
   group: levelup.upbound.io
   names:
-    kind: XAzureStorage
-    plural: xazurestorages
+    kind: XGcpBucket
+    plural: xgcpbuckets
   claimNames:
-    kind: AzureStorage
-    plural: azurestorages
+    kind: GcpBucket
+    plural: gcpbucketss
   versions:
     - name: v1alpha1
       served: true

@@ -3,8 +3,10 @@
 This folder has each managed resource in a file to be built by itself as a single resource. Installing all of them will
 create the following:
 
-* One S3 bucket
-* A new role, policy and role policy attachment
+* S3 bucket
+* IAM Role
+* IAM Policy
+* IAM RolePolicyAttachment
 
 This is a very basic approach to using Managed resources in Crossplane. It uses only the managed resources from the
 provider and not within a composition. It still provides the benefits of using the kubernetes resource model, but does not

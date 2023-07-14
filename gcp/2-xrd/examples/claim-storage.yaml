@@ -1,0 +1,7 @@
+apiVersion: levelup.upbound.io/v1alpha1
+kind: GcpBucket
+metadata:
+  name: gcp-levelup-xrd-CHANGE-ME
+spec:
+  id: levelup-xrd-CHANGE-ME
+  location: "US"

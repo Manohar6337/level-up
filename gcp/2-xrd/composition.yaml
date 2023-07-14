@@ -1,0 +1,49 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: xgcpbuckets.levelup.upbound.io
+spec:
+  writeConnectionSecretsToNamespace: default
+  compositeTypeRef:
+    apiVersion: levelup.upbound.io/v1alpha1
+    kind: XGcpBucket
+  resources:
+    - base:
+        apiVersion: storage.gcp.upbound.io/v1beta1
+        kind: Bucket
+        spec:
+          forProvider:
+            storageClass: STANDARD
+      name: storageBucket
+      patches:
+        - fromFieldPath: spec.id
+          toFieldPath: metadata.name
+          transforms:
+            - type: string
+              string:
+                fmt: "%s-bucket"
+        - fromFieldPath: spec.location
+          toFieldPath: spec.forProvider.location
+        - fromFieldPath: spec.id
+          toFieldPath: spec.forProvider.labels.name
+    - base:
+        apiVersion: storage.gcp.upbound.io/v1beta1
+        kind: BucketAccessControl
+        spec:
+          forProvider:
+            role: READER
+            entity: allUsers
+      name: storageBucketACL
+      patches:
+        - fromFieldPath: spec.id
+          toFieldPath: spec.forProvider.bucketRef.name
+          transforms:
+            - type: string
+              string:
+                fmt: "%s-bucket"
+        - fromFieldPath: spec.id
+          toFieldPath: metadata.name
+          transforms:
+            - type: string
+              string:
+                fmt: "%s-bucket-acl"

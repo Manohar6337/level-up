@@ -1,0 +1,10 @@
+apiVersion: storage.azure.upbound.io/v1beta1
+kind: Container
+metadata:
+  name: levelup-storagecontainer-CHANGE-ME
+  labels:
+    crossplane-demo: azure-levelup-managed-resources
+spec:
+  forProvider:
+    containerAccessType: blob
+    storageAccountName: levelupstorageacctorg

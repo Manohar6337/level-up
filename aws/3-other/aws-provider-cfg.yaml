@@ -8,4 +8,4 @@ spec:
     secretRef:
       namespace: upbound-system
       name: aws-secret
-      key: credentials
+      key: creds

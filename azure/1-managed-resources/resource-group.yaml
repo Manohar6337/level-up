@@ -3,7 +3,7 @@ kind: ResourceGroup
 metadata:
   name: levelup-rg-CHANGE-ME
   labels:
-    demo.tm.io/landingzone: levelup-managed-resources
+    crossplane-demo: azure-levelup-managed-resources
 spec:
   forProvider:
     location: West US 3

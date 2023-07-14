@@ -1,0 +1,12 @@
+apiVersion: gcp.upbound.io/v1beta1
+metadata:
+  name: default
+kind: ProviderConfig
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: upbound-system
+      name: gcp-secret
+      key: creds
+  projectID: YOUR-PROJECT-ID # Change to your gcp projectID

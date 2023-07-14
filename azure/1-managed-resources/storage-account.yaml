@@ -1,0 +1,12 @@
+apiVersion: storage.azure.upbound.io/v1beta1
+kind: Account
+metadata:
+  name: levelupstorageacctorg
+  labels:
+    crossplane-demo: azure-levelup-managed-resources
+spec:
+  forProvider:
+    accountReplicationType: LRS
+    accountTier: Standard
+    location: West US 3
+    resourceGroupName: levelup-rg-CHANGE-ME

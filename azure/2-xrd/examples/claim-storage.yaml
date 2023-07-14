@@ -1,0 +1,7 @@
+apiVersion: levelup.upbound.io/v1alpha1
+kind: AzureStorage
+metadata:
+  name: azure-levelup-xrd-CHANGE-ME
+spec:
+  id: levelupxrdtorg
+  location: "West US 3"

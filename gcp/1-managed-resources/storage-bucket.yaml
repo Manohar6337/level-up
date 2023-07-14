@@ -1,0 +1,10 @@
+apiVersion: storage.gcp.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: levelup-bucket-CHANGE-ME
+  labels:
+    crossplane-demo: gcp-levelup-managed-resources
+spec:
+  forProvider:
+    storageClass: STANDARD
+    location: US

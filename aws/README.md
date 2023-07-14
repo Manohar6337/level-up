@@ -8,7 +8,8 @@
 5. `kubectl get providers` and verify INSTALLED and HEALTHY are true.
 
 ## Configure Provider
-1. [Create a Kubernetes secret for AWS](https://docs.upbound.io/quickstart/provider-aws/#create-a-kubernetes-secret-for-aws)
+1. [Create a Kubernetes secret for AWS](https://docs.crossplane.io/latest/getting-started/provider-aws/#create-a-kubernetes-secret-with-the-aws-credentials)
+    * BE SURE TO CREATE THE SECRET IN THE upbound-system NAMESPACE and not crossplane-system.
 2. Install the provider config `kubectl apply -f 3-other/aws-provider-cfg.yaml`
 3. `kubectl get providerconfigs` and verify the default provider is created
 
@@ -18,6 +19,12 @@ Go in to each folder below to follow the README for each section.
 
 * [Managed Resources](1-managed-resources)
 * [Composite Resource Definition](2-xrd)
+  
+Each folder will create one the following:
+* S3 bucket
+* IAM Role
+* IAM Policy
+* IAM RolePolicyAttachment
 
 ## Notes
 Each folder can be run and there should be no naming conflicts.
